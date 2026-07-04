@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kennedy Murimi | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   VARIABLES
+========================= */
+:root{
+    --color-primary:#2563eb;
+    --color-dark:#222;
+    --color-light:#f4f4f4;
+}
+
+/* =========================
+   RESET
+========================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Roboto',sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+}
+
+img{
+    max-width:100%;
+    height:auto;
+    display:block;
+}
+
+section{
+    padding:4rem 2rem;
+}
+
+h1,h2,h3{
+    font-family:'Poppins',sans-serif;
+    margin-bottom:1rem;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:1rem 2rem;
+    background:var(--color-dark);
+}
+
+.logo{
+    color:white;
+    font-weight:700;
+    font-size:1.3rem;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:1.5rem;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    transition:all .3s ease;
+}
+
+.nav-links a:hover{
+    color:var(--color-primary);
+}
+
+/* =========================
+   HERO
+========================= */
+.hero{
+    display:flex;
+    flex-direction:column;
+    gap:2rem;
+}
+
+.hero-content{
+    flex:1;
+}
+
+.hero-content h1{
+    font-size:3rem;
+}
+
+.hero-image{
+    flex:1;
+}
+
+.button{
+    display:inline-block;
+    background:var(--color-primary);
+    color:white;
+    text-decoration:none;
+    padding:12px 24px;
+    border-radius:6px;
+    margin-top:1rem;
+    transition:all .3s ease;
+}
+
+.button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 4px 6px rgba(0,0,0,.1);
+}
+
+/* =========================
+   CARDS
+========================= */
+.card,
+.project-card{
+    background:var(--color-light);
+    padding:1.5rem;
+    border-radius:10px;
+    transition:all .3s ease;
+}
+
+.card:hover,
+.project-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 20px rgba(0,0,0,.1);
+}
+
+/* =========================
+   PROJECT GRID
+========================= */
+.projects-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
+}
+
+/* =========================
+   PHOTO GALLERY
+========================= */
+.gallery{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+/* =========================
+   MAGAZINE LAYOUT
+========================= */
+.magazine-layout{
+    display:grid;
+    gap:20px;
+    margin-top:2rem;
+}
+
+.header{
+    background:#333;
+    color:white;
+    padding:20px;
+}
+
+.sidebar{
+    background:#ddd;
+    padding:20px;
+}
+
+.main{
+    background:#f4f4f4;
+    padding:20px;
+}
+
+.footer-grid{
+    background:#333;
+    color:white;
+    padding:20px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+.contact-container{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.contact-sidebar{
+    background:var(--color-light);
+    padding:20px;
+    border-radius:10px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:12px;
+    margin-bottom:1rem;
+}
+
+.contact-form button{
+    padding:12px 24px;
+    border:none;
+    background:var(--color-primary);
+    color:white;
+    cursor:pointer;
+    transition:all .3s ease;
+}
+
+.contact-form button:hover{
+    transform:translateY(-2px);
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer{
+    background:var(--color-dark);
+    color:white;
+    padding:40px 20px;
+}
+
+.footer-top{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.footer-bottom{
+    text-align:center;
+    margin-top:20px;
+    border-top:1px solid #555;
+    padding-top:15px;
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus{
+    outline:2px solid var(--color-primary);
+    outline-offset:2px;
+}
+
+/* =========================
+   TABLET 768px+
+========================= */
+@media (min-width:768px){
+
+    .projects-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .gallery{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .magazine-layout{
+        grid-template-columns:250px 1fr;
+        grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    }
+
+    .header{grid-area:header;}
+    .sidebar{grid-area:sidebar;}
+    .main{grid-area:main;}
+    .footer-grid{grid-area:footer;}
+}
+
+/* =========================
+   DESKTOP 1024px+
+========================= */
+@media (min-width:1024px){
+
+    .hero{
+        flex-direction:row;
+        align-items:center;
+    }
+
+    .projects-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .contact-container{
+        flex-direction:row;
+    }
+
+    .contact-sidebar{
+        width:30%;
+    }
+
+    .contact-form{
+        width:70%;
+    }
+
+    .footer-top{
+        flex-direction:row;
+        justify-content:space-around;
+    }
+}
+
+/* =========================
+   LARGE DESKTOP 1280px+
+========================= */
+@media (min-width:1280px){
+
+    body{
+        max-width:1200px;
+        margin:auto;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+    <div class="logo">KennedyMurimi100</div>
+
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+
+    <div class="hero-content">
+        <h1>Hello, I'm Kennedy Murimi</h1>
+
+        <p>
+            I am a beginner in the new world of computer programming
+            at We Can Academy and excited to grow my skills.
+        </p>
+
+        <a href="#contact" class="button">Contact Me</a>
+    </div>
+
+    <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1607827448287-456ca1b329d0?q=80&w=687&auto=format&fit=crop"
+             alt="Nature scenery">
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2>About Me</h2>
+
+    <div class="card">
+        <p>
+            I enjoy learning programming, creating projects,
+            and exploring technology.
+        </p>
+    </div>
+</section>
+
+<!-- HOBBIES -->
+<section id="hobbies">
+    <h2>My Hobbies</h2>
+
+    <div class="projects-grid">
+
+        <div class="project-card">
+            <h3>🎵 Music</h3>
+            <p>Listening to music and exploring sounds.</p>
+        </div>
+
+        <div class="project-card">
+            <h3>🎮 Gaming</h3>
+            <p>Playing games and learning about game development.</p>
+        </div>
+
+        <div class="project-card">
+            <h3>🌿 Nature Viewing</h3>
+            <p>Enjoying nature and beautiful landscapes.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+    <h2>Photo Gallery</h2>
+
+    <div class="gallery">
+        <img src="https://picsum.photos/400/300?1" alt="Gallery image">
+        <img src="https://picsum.photos/400/300?2" alt="Gallery image">
+        <img src="https://picsum.photos/400/300?3" alt="Gallery image">
+        <img src="https://picsum.photos/400/300?4" alt="Gallery image">
+        <img src="https://picsum.photos/400/300?5" alt="Gallery image">
+        <img src="https://picsum.photos/400/300?6" alt="Gallery image">
+    </div>
+</section>
+
+<!-- MAGAZINE GRID EXERCISE -->
+<section>
+    <h2>Learning Layouts</h2>
+
+    <div class="magazine-layout">
+        <div class="header">Header</div>
+        <div class="sidebar">Sidebar Content</div>
+        <div class="main">Main Content Area</div>
+        <div class="footer-grid">Footer</div>
+    </div>
+</section>
+
+<!-- INTERESTS -->
+<section>
+    <h2>Interests</h2>
+
+    <div class="card">
+        <p>
+            Interested in
+            <a href="https://www.unrealengine.com/" target="_blank">
+                Unreal Engine
+            </a>
+            and game development.
+        </p>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Contact Me</h2>
+
+    <div class="contact-container">
+
+        <div class="contact-sidebar">
+            <h3>Contact Information</h3>
+            <p>Email: sprtajacklee@gmail.com</p>
+        </div>
+
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea rows="5" placeholder="Your Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="footer-top">
+
+        <div>
+            <h3>About</h3>
+            <p>Programming student at We Can Academy.</p>
+        </div>
+
+        <div>
+            <h3>Links</h3>
+            <p>Home | About | Contact</p>
+        </div>
+
+        <div>
+            <h3>Contact</h3>
+            <p>sprtajacklee@gmail.com</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Kennedy Murimi. All Rights Reserved.
+    </div>
+
+</footer>
+
+</body>
+</html>
