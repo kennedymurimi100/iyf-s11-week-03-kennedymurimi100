@@ -4,7 +4,7 @@ Brief description of your project and what you learned this week.
 
 ## Live Demo
 
-[View Live Site](https://kennedymurimi100.github.io/iyf-s11-week-03-kennedymurimi100)
+[View Live Site](https://github.com/kennedymurimi100/iyf-s11-week-03-kennnedymurimi100)
 
 ## Screenshot
 
