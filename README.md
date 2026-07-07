@@ -40,8 +40,6 @@ iyf-s11-week-03-yourusername/
 \`\`\`
 
 ## What I Learned
-- Navigating the Linux file system using terminal commands.
-- Creating, moving, renaming, copying, and deleting files and directories.
 - Searching for files and viewing their contents from the command line.
 - Understanding file permissions and basic Linux utilities.
 - Initializing and managing Git repositories.
