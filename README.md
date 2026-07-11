@@ -6,11 +6,11 @@
 
 ## Live Demo
 
-[View Live Site](https://github.com/kennedymurimi100/iyf-s11-week-03-kennnedymurimi100)
+
 
 ## Screenshot
 
-![Project Screenshot](https://github.com/user-attachments/assets/85e58567-49c6-40e7-ade0-0dd40361299e)
+
 
 
 ## Features
